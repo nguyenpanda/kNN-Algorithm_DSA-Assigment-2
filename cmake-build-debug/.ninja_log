@@ -1,0 +1,6 @@
+# ninja log v5
+7	2304	1715405605811995840	CMakeFiles/DSA_Assignment.dir/src/kDTree.cpp.o	a9cfbe652d63b83a
+7	2014	1715405605520240348	CMakeFiles/DSA_Assignment.dir/src/main.cpp.o	124cff902bccc644
+11	194	1715407424260769545	build.ninja	ff5da481673e8002
+2	2389	1715138552453109739	CMakeFiles/DSA_Assignment.dir/main.cpp.o	e6c4f4466d53544a
+2400	2505	1715138552576583499	DSA_Assignment	5ced244a5fb2f577
