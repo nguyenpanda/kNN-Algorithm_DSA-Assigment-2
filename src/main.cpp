@@ -30,28 +30,14 @@ void tc2() {
 
 void tc3() {
     kDTree tree(2);
-    vector<vector<int>> pointList = {{5, 6},
-                                     {2, 2},
-                                     {7, 3},
-                                     {2, 8},
-                                     {8, 7},
-                                     {8, 1},
-                                     {9, 4},
-                                     {3, 5}};
+    vector<vector<int> > pointList = {{5, 6}, {2, 2}, {7, 3}, {2, 8}, {8, 7}, {8, 1}, {9, 4}, {3, 5}};
     tree.buildTree(pointList);
     tree.preorderTraversal();
 }
 
 void tc4() {
     kDTree tree(2);
-    vector<vector<int>> pointList = {{5, 6},
-                                     {2, 2},
-                                     {7, 3},
-                                     {2, 8},
-                                     {8, 7},
-                                     {8, 1},
-                                     {9, 4},
-                                     {3, 5}};
+    vector<vector<int> > pointList = {{5, 6}, {2, 2}, {7, 3}, {2, 8}, {8, 7}, {8, 1}, {9, 4}, {3, 5}};
     tree.buildTree(pointList);
     cout << tree.search({2, 2}) << endl;
     cout << tree.search({9, 3}) << endl;
