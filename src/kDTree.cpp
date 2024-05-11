@@ -248,11 +248,11 @@ bool kDTree::search(const vector<int>& point) {
     return recSearch(this->root, point, 0);
 }
 
-void kDTree::merge(vector<vector<int>>& pointList, vector<int>& label, int start, int mid, int end, int u) {
+void kDTree::merge(vector<vector<int> >& pointList, vector<int>& label, int start, int mid, int end, int u) {
     int n1 = mid - start + 1;
     int n2 = end - mid;
 
-    vector<vector<int>> leftPoint(n1), rightPoint(n2);
+    vector<vector<int> > leftPoint(n1), rightPoint(n2);
     vector<int> leftLabel(n1), rightLabel(n2);
 
     for (int i = 0; i < n1; i++) {
@@ -296,7 +296,7 @@ void kDTree::merge(vector<vector<int>>& pointList, vector<int>& label, int start
     }
 }
 
-void kDTree::mergeSort(vector<vector<int>>& pointList, vector<int>& label, int start, int end, int u) {
+void kDTree::mergeSort(vector<vector<int> >& pointList, vector<int>& label, int start, int end, int u) {
     if (start < end) {
         int mid = start + (end - start) / 2;
         mergeSort(pointList, label, start, mid, u);
@@ -305,7 +305,7 @@ void kDTree::mergeSort(vector<vector<int>>& pointList, vector<int>& label, int s
     }
 }
 
-kDTreeNode* kDTree::recBuildTree(vector<vector<int>>& pointList, vector<int>& label, int level) {
+kDTreeNode* kDTree::recBuildTree(vector<vector<int> >& pointList, vector<int>& label, int level) {
 
     if (pointList.empty() || pointList.size() == 0) {
         return nullptr;
@@ -319,8 +319,8 @@ kDTreeNode* kDTree::recBuildTree(vector<vector<int>>& pointList, vector<int>& la
     while (mid > 0 && pointList[mid - 1][alpha] == pointList[mid][alpha]) {
         mid--;
     }
-    vector<vector<int>> left(pointList.begin(), pointList.begin() + mid);
-    vector<vector<int>> right(pointList.begin() + mid + 1, pointList.end());
+    vector<vector<int> > left(pointList.begin(), pointList.begin() + mid);
+    vector<vector<int> > right(pointList.begin() + mid + 1, pointList.end());
     vector<int> leftLabel(label.begin(), label.begin() + mid);
     vector<int> rightLabel(label.begin() + mid + 1, label.end());
     kDTreeNode* Node = newNode(pointList[mid], label[mid]);
@@ -330,14 +330,14 @@ kDTreeNode* kDTree::recBuildTree(vector<vector<int>>& pointList, vector<int>& la
     return Node;
 }
 
-void kDTree::buildTree(const vector<vector<int>>& pointList, vector<int> label) {
+void kDTree::buildTree(const vector<vector<int> >& pointList, vector<int> label) {
     if (label.empty()) {
         int n = pointList.size();
         for (int i = 0; i < n; i++) {
             label.push_back(0);
         }
     }
-    vector<vector<int>> tem(pointList.begin(), pointList.end());
+    vector<vector<int> > tem(pointList.begin(), pointList.end());
     this->root = recBuildTree(tem, label, 0);
     this->count = pointList.size();
 }
@@ -473,7 +473,7 @@ void kNN::fit(Dataset& X_train, Dataset& y_train) {
     this->X_train = &X_train;
     this->y_train = &y_train;
 
-    vector<vector<int>> pointList;
+    vector<vector<int> > pointList;
     for (auto tem: this->X_train->data) {
         vector<int> x;
         for (int i: tem) {
@@ -497,7 +497,7 @@ void kNN::fit(Dataset& X_train, Dataset& y_train) {
 
 Dataset kNN::predict(Dataset& X_test) {
     Dataset y_pred;
-    vector<vector<int>> pointList;
+    vector<vector<int> > pointList;
     for (auto tem: this->X_train->data) {
         vector<int> x;
         for (int i: tem) {
@@ -538,7 +538,7 @@ Dataset kNN::predict(Dataset& X_test) {
 }
 
 double kNN::score(const Dataset& y_test, const Dataset& y_pred) {
-    vector<vector<int>> vt_test;
+    vector<vector<int> > vt_test;
     for (auto it: y_test.data) {
         vector<int> tem;
         for (int x: it) {
@@ -547,7 +547,7 @@ double kNN::score(const Dataset& y_test, const Dataset& y_pred) {
         vt_test.push_back(tem);
     }
 
-    vector<vector<int>> vt_pred;
+    vector<vector<int> > vt_pred;
     for (auto it: y_pred.data) {
         vector<int> tem;
         for (int x: it) {
