@@ -83,11 +83,11 @@ public:
 
     bool recSearch(kDTreeNode* temp, const vector<int>& point, int level);
 
-    void merge(vector<vector<int>>& pointList, vector<int>& label, int start, int mid, int end, int u);
+    void merge(vector<vector<int> >& pointList, vector<int>& label, int start, int mid, int end, int u);
 
-    void mergeSort(vector<vector<int>>& pointList, vector<int>& label, int start, int end, int u);
+    void mergeSort(vector<vector<int> >& pointList, vector<int>& label, int start, int end, int u);
 
-    kDTreeNode* recBuildTree(vector<vector<int>>& pointList, vector<int>& label, int level);
+    kDTreeNode* recBuildTree(vector<vector<int> >& pointList, vector<int>& label, int level);
 
     double distance(const vector<int>& vt1, const vector<int>& vt2);
 
@@ -119,7 +119,7 @@ public:
 
     bool search(const vector<int>& point);
 
-    void buildTree(const vector<vector<int>>& pointList, vector<int> label = vector<int>());
+    void buildTree(const vector<vector<int> >& pointList, vector<int> label = vector<int>());
 
     void nearestNeighbour(const vector<int>& target, kDTreeNode*& best);
 
