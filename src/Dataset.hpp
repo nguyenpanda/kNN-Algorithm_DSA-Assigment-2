@@ -32,8 +32,6 @@ public:
                                  Dataset& X_train, Dataset& X_test, Dataset& y_train, Dataset& y_test);
 
     friend class kNN;
-
-
 };
 
 void train_test_split(Dataset& X, Dataset& y, double test_size,
